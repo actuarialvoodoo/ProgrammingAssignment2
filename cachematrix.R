@@ -29,6 +29,9 @@ cacheSolve <- function(x, ...) {
           return(m)
      }
      data <- x$get()
+     
+     ## using solve to find the inverse of x. Diag provides the identity
+     ## matrix
      m <- solve(data,diag(nrow(data)))
      x$setinverse(m)
      m
